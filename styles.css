@@ -5,7 +5,7 @@ body {
     padding: 0;
 }
 
-.tutorial, .game-container {
+.game-container {
     text-align: center;
     margin: 50px auto;
     width: 80%;
@@ -23,6 +23,33 @@ body {
     width: 150px;
 }
 
+#kitchen {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#ingredients {
+    display: flex;
+    gap: 10px;
+}
+
+.ingredient {
+    width: 100px;
+    cursor: pointer;
+}
+
+#bowl {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+#bowl img {
+    width: 100%;
+}
+
 button {
     padding: 10px 20px;
     background-color: #ff6f61;
@@ -37,15 +64,8 @@ button:hover {
     background-color: #ff3b2f;
 }
 
-#customer-orders, #cake-ingredients, #result {
+#result {
     margin: 20px 0;
-}
-
-#customer-orders {
-    font-weight: bold;
     font-size: 18px;
-}
-
-#cake-ingredients button {
-    margin: 5px;
+    font-weight: bold;
 }
