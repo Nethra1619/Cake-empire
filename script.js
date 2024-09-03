@@ -1,36 +1,56 @@
-let ingredients = ['Flour', 'Sugar', 'Eggs', 'Butter', 'Vanilla'];
 let selectedIngredients = [];
-let customerOrder = 'Vanilla Cake';
 
-// Display customer order
 document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('customer-orders').textContent = `Customer wants a: ${customerOrder}`;
-    let ingredientsDiv = document.getElementById('cake-ingredients');
-    
+    let ingredients = document.querySelectorAll('.ingredient');
+    let bowl = document.getElementById('bowl');
+
     ingredients.forEach(ingredient => {
-        let button = document.createElement('button');
-        button.textContent = ingredient;
-        button.onclick = () => selectIngredient(ingredient);
-        ingredientsDiv.appendChild(button);
+        ingredient.addEventListener('dragstart', dragStart);
     });
-    
-    document.getElementById('bake-cake').onclick = bakeCake;
+
+    bowl.addEventListener('dragover', dragOver);
+    bowl.addEventListener('drop', drop);
+
+    document.getElementById('bake-cake').addEventListener('click', bakeCake);
 });
 
-function selectIngredient(ingredient) {
-    if (!selectedIngredients.includes(ingredient)) {
-        selectedIngredients.push(ingredient);
-        alert(`${ingredient} added!`);
-    } else {
-        alert(`${ingredient} already added!`);
+function dragStart(event) {
+    event.dataTransfer.setData('text/plain', event.target.id);
+}
+
+function dragOver(event) {
+    event.preventDefault();
+}
+
+function drop(event) {
+    event.preventDefault();
+    let ingredientId = event.dataTransfer.getData('text/plain');
+    let ingredient = document.getElementById(ingredientId);
+
+    if (!selectedIngredients.includes(ingredientId)) {
+        selectedIngredients.push(ingredientId);
+        bowl.appendChild(ingredient);
+        ingredient.classList.add('added');
     }
 }
 
 function bakeCake() {
-    if (selectedIngredients.includes('Vanilla') && selectedIngredients.length === 3) {
+    if (selectedIngredients.includes('vanilla') && selectedIngredients.length >= 3) {
         document.getElementById('result').textContent = 'You made the perfect Vanilla Cake!';
     } else {
         document.getElementById('result').textContent = 'The cake didn\'t turn out well. Try again!';
     }
+    resetGame();
+}
+
+function resetGame() {
     selectedIngredients = [];
+    let bowl = document.getElementById('bowl');
+    let ingredients = document.querySelectorAll('.ingredient.added');
+    
+    ingredients.forEach(ingredient => {
+        bowl.removeChild(ingredient);
+        document.getElementById('ingredients').appendChild(ingredient);
+        ingredient.classList.remove('added');
+    });
 }
