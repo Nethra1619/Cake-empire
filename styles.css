@@ -1,6 +1,6 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f8f8;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #ffebcd;
     margin: 0;
     padding: 0;
 }
@@ -14,12 +14,23 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.character {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.character img {
+    width: 150px;
+}
+
 button {
     padding: 10px 20px;
     background-color: #ff6f61;
     color: white;
     border: none;
     cursor: pointer;
+    border-radius: 10px;
+    font-size: 16px;
 }
 
 button:hover {
@@ -32,6 +43,7 @@ button:hover {
 
 #customer-orders {
     font-weight: bold;
+    font-size: 18px;
 }
 
 #cake-ingredients button {
