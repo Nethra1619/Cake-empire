@@ -9,9 +9,11 @@ Check out the live demo here: [Live Demo](https://nethra1619.github.io/Cake-empi
 ## Features
 
 - **Interactive Gameplay:** Choose your ingredients and bake the perfect cake.
+- **Character Interaction:** Help Emma, our friendly baker, make the best cakes.
 - **Customer Orders:** Serve your customers with their favorite cakes.
 - **No Robot Assistance:** All decisions are in your hands—make the game truly your own.
 - **Engaging Tutorial:** Learn how to play with a simple tutorial on the front page.
+
 
 ## Getting Started
 
