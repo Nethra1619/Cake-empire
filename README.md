@@ -4,7 +4,7 @@ Welcome to Cake Empire! This is a fun, interactive game where you manage your ow
 
 ## Live Demo
 
-Check out the live demo here: [Cake Empire Live Demo](https://github.com/nethra1619/Cake-empire.git) 
+Check out the live demo here:  [Live Demo](https://github.com/nethra1619/Cake-empire.git) 
 ## Features
 
 - **Interactive Gameplay:** Choose your ingredients and bake the perfect cake.
